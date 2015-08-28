@@ -8,7 +8,7 @@ require 'active_support/all'
     },
   @p2 = {
   name: "Player 2",
-  live: 3,
+  lives: 3,
   score: 0
   }
 ]
