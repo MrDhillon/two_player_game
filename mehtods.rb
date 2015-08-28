@@ -1,11 +1,11 @@
 require 'colorize'
 
-# def generate_question
-#   @n1 = rand(20)
-#   @n2 = rand(20)
-#   @answer = @n1 + @n2
-#   promt_for_ans
-# end
+def player_creation
+  puts "Player 1 what is your name?"
+  @player1 = Person.new(gets.chomp)
+  puts "Player2 what is your name?"
+  @player2 = Person.new(gets.chomp)
+end
 
 def promt_for_ans(player)
   n1 = rand(20)
@@ -20,9 +20,9 @@ end
 def verify_answer(answer_p)
   if @answer == answer_p
     puts "you got the right answer"
-    @current_player[:score] += 1
+    @current_player.gain_a_point
   else
     puts "nope"
-    @current_player[:lives] -= 1
+    @current_player.lose_live
   end
 end
